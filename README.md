@@ -1,31 +1,31 @@
-# Psychedelics in Functional Disorders: Data Visualization
+# Psychedelics in Functional Disorders: Data Visualisation
 
-This repository contains code for creating publication-quality visualizations for a scoping review of psychedelics in functional disorders. The visualizations include study type distributions, psychedelic usage timelines, and physiological system improvements.
+This repository contains code for creating publication-quality visualisations for a scoping review of psychedelics in functional disorders. The visualisations include study type distributions, psychedelic usage timelines, and physiological system improvements.
 
-## Visualizations
+## Visualisations
 
 ### 1. Study Types Distribution
 ![Study Types Distribution](study_types.png)
 - A bar chart showing the distribution of different study types
-- Features vintage-colored bars with clear value labels
+- Features vintage-coloured bars with clear value labels
 - Includes grid lines for easy value reading
 - Uses enhanced typography with bold titles and labels
 
 ### 2. Psychedelic Usage Timeline
 ![Psychedelic Timeline](psychedelic_timeline.png)
 - A scatter plot showing psychedelic usage across time
-- Points sized and colored by study type
+- Points sized and coloured by study type
 - Includes horizontal reference lines for each psychedelic
 - Includes vertical reference lines for years
-- Enhanced with vintage color palette
+- Enhanced with vintage colour palette
 - Clear legend and axis labels
 
 ### 3. Physiological System Improvements
 ![System Improvements](system_improvements.png)
-- Dual-panel visualization showing:
+- Dual-panel visualisation showing:
   - Left: Bar chart of improvement percentages by system
   - Right: Bubble chart showing improvement rates vs. sample sizes
-- Color-coded using vintage palette
+- Colour-coded using vintage palette
 - Includes sample size information
 - Clear typography and labels
 
@@ -39,8 +39,8 @@ This repository contains code for creating publication-quality visualizations fo
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/your-username/psychedelics-visualization.git
-cd psychedelics-visualization
+git clone https://github.com/bmilinkovic/psychedelics-visualisation.git
+cd psychedelics-visualisation
 ```
 
 2. Install required packages:
@@ -52,15 +52,15 @@ pip install -r requirements.txt
 The following Python packages are required:
 - pandas (>= 2.0.0): Data manipulation and analysis
 - matplotlib (>= 3.7.0): Core plotting functionality
-- seaborn (>= 0.12.0): Statistical data visualization
+- seaborn (>= 0.12.0): Statistical data visualisation
 - openpyxl (>= 3.1.0): Excel file support
 
 ## Usage
 
 1. Place your data file (Key_results_output_1.2.xlsx) in the project directory
-2. Run the visualization script:
+2. Run the visualisation script:
 ```bash
-python visualize_data.py
+python visualise_data.py
 ```
 
 The script will generate three PNG files:
@@ -77,10 +77,10 @@ The input Excel file should contain the following columns:
 - Psychedelic: Type of psychedelic used
 - Additional columns for system improvements data
 
-## Customization
+## Customisation
 
-The visualizations can be customized by modifying:
-- Color palettes in the `wes_colors` dictionary
+The visualisations can be customised by modifying:
+- Colour palettes in the `wes_colours` dictionary
 - Figure sizes and dimensions
 - Font sizes and styles
 - Grid properties
@@ -90,12 +90,12 @@ The visualizations can be customized by modifying:
 
 Feel free to submit issues, fork the repository, and create pull requests for any improvements.
 
-## License
+## Licence
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT Licence - see the LICENCE file for details.
 
-## Acknowledgments
+## Acknowledgements
 
-- Color palettes inspired by Wes Anderson films
-- Visualization design based on modern data visualization best practices
+- Colour palettes inspired by Wes Anderson films
+- Visualisation design based on modern data visualisation best practices
 - Seaborn and Matplotlib libraries for powerful Python plotting 

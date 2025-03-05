@@ -8,8 +8,8 @@ import numpy as np
 plt.style.use('seaborn-v0_8')
 sns.set_theme()
 
-# Wes Anderson inspired color palette - updated with more muted tones
-wes_colors = {
+# Wes Anderson inspired colour palette - updated with more muted tones
+wes_colours = {
     'muted': ['#96613D', '#3C6E47', '#4F6D7A', '#6B4E71', '#8B575C'],
     'vintage': ['#9B8357', '#7D9B76', '#7B92A8', '#957D8D', '#A67F81']
 }
@@ -30,8 +30,8 @@ def create_study_type_bar_chart(df):
     plt.figure(figsize=(10, 6))
     study_counts = df['Study type'].value_counts()
     
-    # Create bar plot with Wes Anderson colors
-    bars = plt.bar(study_counts.index, study_counts.values, color=wes_colors['vintage'])
+    # Create bar plot with Wes Anderson colours
+    bars = plt.bar(study_counts.index, study_counts.values, color=wes_colours['vintage'])
     
     # Set white background and black axes
     plt.gca().set_facecolor('white')
@@ -41,7 +41,7 @@ def create_study_type_bar_chart(df):
     plt.gca().spines['left'].set_color('black')
     plt.gca().spines['right'].set_color('black')
     
-    # Customize the plot with larger, bolder fonts
+    # Customise the plot with larger, bolder fonts
     plt.title('Distribution of Study Types', pad=20, fontsize=16, fontweight='bold')
     plt.xlabel('Study Type', fontsize=14, fontweight='bold')
     plt.ylabel('Number of Studies', fontsize=14, fontweight='bold')
@@ -63,7 +63,7 @@ def create_study_type_bar_chart(df):
     plt.close()
 
 def create_psychedelic_timeline(df):
-    """Create a timeline visualization of psychedelic usage"""
+    """Create a timeline visualisation of psychedelic usage"""
     plt.figure(figsize=(12, 6))
     
     # Set white background and black axes
@@ -84,13 +84,13 @@ def create_psychedelic_timeline(df):
     for year in unique_years:
         plt.axvline(x=year, color='gray', linestyle='--', linewidth=0.5, alpha=0.3)
     
-    # Create the main scatter plot with vintage colors
+    # Create the main scatter plot with vintage colours
     sns.scatterplot(data=df, x='Year', y='Psychedelic', 
                    hue='Study type', size='Study type',
                    sizes=(100, 200), alpha=0.8,
-                   palette=wes_colors['vintage'])
+                   palette=wes_colours['vintage'])
     
-    # Customize the plot with larger, bolder fonts
+    # Customise the plot with larger, bolder fonts
     plt.title('Psychedelic Usage Timeline by Study Type', pad=20, fontsize=16, fontweight='bold')
     plt.xlabel('Year', fontsize=14, fontweight='bold')
     plt.ylabel('Psychedelic', fontsize=14, fontweight='bold')
@@ -106,7 +106,7 @@ def create_psychedelic_timeline(df):
     plt.close()
 
 def create_system_improvements(improvements_data):
-    """Create an enhanced visualization of improvements by physiological system"""
+    """Create an enhanced visualisation of improvements by physiological system"""
     # Sample data structure (you'll need to replace this with your actual data)
     data = {
         'System': [
@@ -123,9 +123,9 @@ def create_system_improvements(improvements_data):
     
     # First subplot: Enhanced bar chart
     bars = ax1.bar(df['System'], df['Improvement_Percentage'], 
-                  color=wes_colors['vintage'])
+                  color=wes_colours['vintage'])
     
-    # Customize first subplot
+    # Customise first subplot
     ax1.set_title('Improvements by Physiological System', pad=20, 
                  fontsize=16, fontweight='bold')
     ax1.set_xlabel('Physiological System', fontsize=14, fontweight='bold')
@@ -151,7 +151,7 @@ def create_system_improvements(improvements_data):
                          c=np.arange(len(df)),
                          cmap='RdYlBu')
     
-    # Customize second subplot
+    # Customise second subplot
     ax2.set_title('Improvement Rate vs. Sample Size', pad=20,
                  fontsize=16, fontweight='bold')
     ax2.set_xlabel('Improvement Percentage (%)', fontsize=14, fontweight='bold')
@@ -181,12 +181,12 @@ def main():
     if df is None:
         return
     
-    # Create visualizations
+    # Create visualisations
     create_study_type_bar_chart(df)
     create_psychedelic_timeline(df)
     create_system_improvements(df)
     
-    print("Visualizations have been created and saved as PNG files.")
+    print("Visualisations have been created and saved as PNG files.")
 
 if __name__ == "__main__":
     main() 
