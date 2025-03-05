@@ -23,11 +23,13 @@ This repository contains code for creating publication-quality visualisations fo
 ### 3. Physiological System Improvements
 ![System Improvements](system_improvements.png)
 - Dual-panel visualisation showing:
-  - Left: Bar chart of improvement percentages by system
+  - Left: Bar chart of improvement percentages by physiological system
   - Right: Bubble chart showing improvement rates vs. sample sizes
-- Colour-coded using vintage palette
-- Includes sample size information
-- Clear typography and labels
+- Consistent colour scheme across both panels for easy system tracking
+- Bubble sizes represent sample sizes
+- Enhanced typography with clear labels
+- Includes percentage labels and grid lines for easy reading
+- Optimised layout for clear data presentation
 
 ## Setup and Installation
 
@@ -81,6 +83,7 @@ The input Excel file should contain the following columns:
 
 The visualisations can be customised by modifying:
 - Colour palettes in the `wes_colours` dictionary
+- Colour maps for system improvements (using matplotlib's colour maps)
 - Figure sizes and dimensions
 - Font sizes and styles
 - Grid properties

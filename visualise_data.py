@@ -111,7 +111,7 @@ def create_system_improvements(improvements_data):
     data = {
         'System': [
             'Neurological', 'Musculoskeletal', 'Systemic', 'Cardiovascular',
-            'Gastrointestinal', 'Dermatological', 'Genitourinary & reproductive', 'Nonspecific'
+            'Gastrointestinal', 'Dermatological', 'GU & Reproductive', 'Nonspecific'
         ],
         'Improvement_Percentage': [63, 52, 80, 80, 100, 100, 73, 82],
         'Sample_Size': [45, 25, 30, 35, 40, 20, 28, 32]  # Example sample sizes
@@ -121,9 +121,12 @@ def create_system_improvements(improvements_data):
     # Create figure with two subplots side by side
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
     
+    # Create colour map for consistent colours across both plots
+    num_systems = len(df['System'])
+    colours = plt.cm.RdYlBu(np.linspace(0, 1, num_systems))
+    
     # First subplot: Enhanced bar chart
-    bars = ax1.bar(df['System'], df['Improvement_Percentage'], 
-                  color=wes_colours['vintage'])
+    bars = ax1.bar(df['System'], df['Improvement_Percentage'], color=colours)
     
     # Customise first subplot
     ax1.set_title('Improvements by Physiological System', pad=20, 
@@ -146,10 +149,10 @@ def create_system_improvements(improvements_data):
     
     # Second subplot: Bubble chart
     sizes = df['Sample_Size'] * 20  # Scale the bubble sizes appropriately
-    scatter = ax2.scatter(df['Improvement_Percentage'], range(len(df)),
-                         s=sizes, alpha=0.6,
-                         c=np.arange(len(df)),
-                         cmap='RdYlBu')
+    for idx in range(len(df)):
+        ax2.scatter(df['Improvement_Percentage'].iloc[idx], idx,
+                   s=sizes.iloc[idx], alpha=0.8,
+                   color=colours[idx])
     
     # Customise second subplot
     ax2.set_title('Improvement Rate vs. Sample Size', pad=20,
@@ -164,7 +167,8 @@ def create_system_improvements(improvements_data):
                                  c='gray', alpha=0.6)
                       for size in [min(sizes), np.median(sizes), max(sizes)]]
     ax2.legend(handles=legend_elements, title='Sample Size',
-              title_fontsize=12, fontsize=10)
+              title_fontsize=12, fontsize=10, loc='center left',
+              bbox_to_anchor=(1.05, 0.5))
     
     # Add grid to second subplot
     ax2.grid(True, linestyle='--', alpha=0.3)
